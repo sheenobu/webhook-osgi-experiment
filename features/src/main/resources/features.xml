@@ -5,6 +5,7 @@
 		<feature>camel-jms</feature>
 		<feature>camel-activemq</feature>
 		<feature>camel-http</feature>
+		<bundle dependency='true'>mvn:org.restlet.jse/org.restlet/2.0.10</bundle>
 
 		<bundle start-level="80" >mvn:net.sheenobu.webhook/webhook-service/0.1-SNAPSHOT</bundle>
 		<bundle start-level="80" >mvn:net.sheenobu.webhook/webhook-core/0.1-SNAPSHOT</bundle>
@@ -12,6 +13,7 @@
 
 	<feature name="storage">
 		<feature>webhook</feature>
+		<bundle dependency='true'>mvn:org.restlet.jse/org.restlet/2.0.10</bundle>
 
 		<bundle start-level="100">mvn:net.sheenobu.webhook/storage-api/0.1-SNAPSHOT</bundle>
 		<bundle start-level="100">mvn:net.sheenobu.webhook/storage-db/0.1-SNAPSHOT</bundle>
