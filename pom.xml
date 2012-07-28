@@ -11,4 +11,11 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  <modules>
+    <module>webhook-service</module>
+    <module>webhook-core</module>
+    <module>storage-api</module>
+    <module>storage-db</module>
+    <module>features</module>
+  </modules>
 </project>
