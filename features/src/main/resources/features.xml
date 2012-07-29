@@ -1,11 +1,16 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
+	<feature name="restlet">
+		<bundle>mvn:org.restlet.jee/org.restlet/2.0.10</bundle>
+		<bundle>mvn:org.restlet.jee/org.restlet.ext.servlet/2.0.10</bundle>
+	</feature>
+
 	<feature name="webhook">
-		<feature>camel-nmr</feature>
 		<feature>camel-jms</feature>
 		<feature>camel-activemq</feature>
 		<feature>camel-http</feature>
-		<bundle dependency='true'>mvn:org.restlet.jse/org.restlet/2.0.10</bundle>
+		<feature>restlet</feature>
+		<feature>http</feature>
 
 		<bundle start-level="80" >mvn:net.sheenobu.webhook/webhook-service/0.1-SNAPSHOT</bundle>
 		<bundle start-level="80" >mvn:net.sheenobu.webhook/webhook-commands/0.1-SNAPSHOT</bundle>
@@ -14,7 +19,8 @@
 
 	<feature name="storage">
 		<feature>webhook</feature>
-		<bundle dependency='true'>mvn:org.restlet.jse/org.restlet/2.0.10</bundle>
+		<feature>restlet</feature>
+		<feature>http</feature>
 
 		<bundle start-level="100">mvn:net.sheenobu.webhook/storage-api/0.1-SNAPSHOT</bundle>
 		<bundle start-level="100">mvn:net.sheenobu.webhook/storage-db/0.1-SNAPSHOT</bundle>
