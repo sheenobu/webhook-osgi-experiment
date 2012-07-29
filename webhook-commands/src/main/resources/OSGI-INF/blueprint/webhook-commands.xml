@@ -1,0 +1,23 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="webhookService" interface="net.sheenobu.webhook.WebhookService" />
+
+	<command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.0.0">
+		<command name="webhook/list">
+			<action class="net.sheenobu.webhook.karaf.shell.ListCommand">
+				<property name="webhookService" ref="webhookService" />
+			</action>
+		</command>
+		<command name="webhook/call">
+			<action class="net.sheenobu.webhook.karaf.shell.InvokeCommand">
+				<property name="webhookService" ref="webhookService" />
+			</action>
+		</command>
+		<command name="webhook/create">
+			<action class="net.sheenobu.webhook.karaf.shell.CreateCommand">
+				<property name="webhookService" ref="webhookService" />
+			</action>
+		</command>
+	</command-bundle>
+
+</blueprint>

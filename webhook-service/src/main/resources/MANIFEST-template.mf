@@ -5,6 +5,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Webhook :: AccountName :: Description
 Bundle-SymbolicName: webhook-accountname-description
 Bundle-Version: 1.0
+Webhook-Event: FileDeletedEvent
 Created-By: Webhook-Service
 Import-Package: net.sheenobu.webhook.jms,net.sheenobu.webhook.http,
  org.apache.activemq.camel.component,org.apache.activemq
