@@ -37,8 +37,8 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Bundle-Activator>net.sheenobu.webhook.Activator</Bundle-Activator>
-                        <Export-Package>net.sheenobu.webhook*;version=${project.version}</Export-Package>
+                        <Bundle-Activator>net.sheenobu.webhook.internal.Activator</Bundle-Activator>
+                        <Export-Package>net.sheenobu.webhook;version=${project.version}</Export-Package>
                         <Import-Package>*</Import-Package>
                     </instructions>
                 </configuration>

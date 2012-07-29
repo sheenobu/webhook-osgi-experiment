@@ -7,14 +7,13 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import net.sheenobu.webhook.Event;
+import net.sheenobu.webhook.EventHandler;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.CamelContextAware;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
-import org.apache.camel.impl.DefaultExchange;
-
-import net.sheenobu.webhook.Event;
-import net.sheenobu.webhook.EventHandler;
 
 public class HttpEventHandler<T> implements EventHandler<T>, CamelContextAware {
 
@@ -36,6 +35,7 @@ public class HttpEventHandler<T> implements EventHandler<T>, CamelContextAware {
 		//TODO: allow credentials in webhook.
 		//TODO: convert the getBody to json
 
+		
 		//send body
 		Future<String> results = producerTemplate.asyncRequestBodyAndHeaders(
 				httpUri, 

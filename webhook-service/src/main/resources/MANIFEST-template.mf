@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: accountname
+Bundle-Description: webhook created by accountname
+Bundle-ManifestVersion: 2
+Bundle-Name: Webhook :: AccountName :: Description
+Bundle-SymbolicName: webhook-accountname-description
+Bundle-Version: 1.0
+Created-By: Webhook-Service
+Import-Package: net.sheenobu.webhook.jms,net.sheenobu.webhook.http,
+ org.apache.activemq.camel.component,org.apache.activemq

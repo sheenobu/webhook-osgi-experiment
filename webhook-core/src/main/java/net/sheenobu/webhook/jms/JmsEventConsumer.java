@@ -1,9 +1,11 @@
 package net.sheenobu.webhook.jms;
 
-import org.apache.camel.builder.RouteBuilder;
-
 import net.sheenobu.webhook.EventConsumer;
 import net.sheenobu.webhook.EventHandler;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
 
 public class JmsEventConsumer<T> extends RouteBuilder implements EventConsumer {
 
@@ -20,8 +22,14 @@ public class JmsEventConsumer<T> extends RouteBuilder implements EventConsumer {
 	
 	@Override
 	public void configure() throws Exception {
+		System.out.println("listening on jms:events." + eventName);
 		from("jms:events." + eventName)
-			.bean(eventHandler);
+			.process(new Processor() {
+				@Override
+				public void process(Exchange arg0) throws Exception {
+					System.out.println("got event " + eventName);
+				}
+			});
 	}
 
 }
