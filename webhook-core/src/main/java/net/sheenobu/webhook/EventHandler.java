@@ -8,6 +8,6 @@ package net.sheenobu.webhook;
  */
 public interface EventHandler<T> {
 
-	public void handle(Event<T> event);
+	public void handle(Event<T> event) throws Exception;
 	
 }
