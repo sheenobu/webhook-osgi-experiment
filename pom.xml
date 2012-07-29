@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-		  <modelVersion>4.0.0</modelVersion>
-
-		  <groupId>net.sheenobu.webhook</groupId>
-		  <artifactId>webhook-parent</artifactId>
-		  <version>0.1-SNAPSHOT</version>
-		  <packaging>pom</packaging>
-		  <name>Webhook :: Parent</name>
-
-		  <properties>
-					 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		  </properties>
-		  <modules>
-
-					 <module>webhook-service</module>
-					 <module>webhook-core</module>
-					 <module>storage-api</module>
-					 <module>storage-db</module>
-					 <module>features</module>
-		  </modules>
-
-		  <build>
-					 <plugins>
-								<plugin>
-										  <groupId>org.apache.maven.plugins</groupId>
-										  <artifactId>maven-eclipse-plugin</artifactId>
-										  <version>2.9</version>
-										  <configuration>
-													 <useProjectReferences>true</useProjectReferences>
-										  </configuration>
-								</plugin>
-					 </plugins>
-		  </build>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.sheenobu.webhook</groupId>
+  <artifactId>webhook-parent</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Webhook :: Parent</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <modules>
+    <module>webhook-service</module>
+    <module>webhook-core</module>
+    <module>webhook-commands</module>
+    <module>storage-api</module>
+    <module>storage-db</module>
+    <module>features</module>
+  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+          <useProjectReferences>true</useProjectReferences>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <target>1.6</target>
+          <source>1.6</source>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
