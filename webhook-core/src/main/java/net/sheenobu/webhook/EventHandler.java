@@ -1,5 +1,6 @@
 package net.sheenobu.webhook;
 
+
 /**
  * Interface for handling a webhook event.
  * @author sheena
@@ -7,6 +8,6 @@ package net.sheenobu.webhook;
  */
 public interface EventHandler<T> {
 
-	public void handle(T data, Event description);
+	public void handle(Event<T> event);
 	
 }
